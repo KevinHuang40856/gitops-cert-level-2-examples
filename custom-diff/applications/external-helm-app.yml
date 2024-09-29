@@ -5,6 +5,7 @@ metadata:
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
+    
 spec:
   project: default
 
@@ -21,4 +22,5 @@ spec:
   syncPolicy:
     syncOptions:
       - CreateNamespace=true  
-   
+  
+  ignoreDifferences:
