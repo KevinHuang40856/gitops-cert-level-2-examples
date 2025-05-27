@@ -1,4 +1,4 @@
-name: variables - exercise 1
+name: variables - test
 
 on:
   workflow_dispatch:
@@ -14,6 +14,8 @@ jobs:
     - run: echo $VAR2
     - name: Show contents of $GITHUB_ENV
       run: cat $GITHUB_ENV
+    - name: Show contents of $GITHUB_ENV using env 
+      run: env 
       
        
 
