@@ -1,0 +1,25 @@
+name: Outcome and Conclusion Demo
+
+on: [push]
+
+jobs:
+  demo-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step that fails but continues
+        id: continue-step
+        run: exit 1
+        continue-on-error: true
+
+      - name: Step that fails and stops
+        id: stop-step
+        run: exit 1
+        continue-on-error: false
+
+      - name: Check outcome and conclusion
+        if: always()  # Ensure this runs regardless of previous failures
+        run: |
+          echo "continue-step outcome: ${{ steps.continue-step.outcome }}"
+          echo "continue-step conclusion: ${{ steps.continue-step.conclusion }}"
+          echo "stop-step outcome: ${{ steps.stop-step.outcome }}"
+          echo "stop-step conclusion: ${{ steps.stop-step.conclusion }}"
