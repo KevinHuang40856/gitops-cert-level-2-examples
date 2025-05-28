@@ -1,0 +1,17 @@
+name: Env Variable Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test-env:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step 1 - Set environment variable
+        run: |
+          echo "MY_VAR=HelloFromStep1" >> $GITHUB_ENV
+          echo "Step 1: MY_VAR is $MY_VAR"  # This will be empty
+
+      - name: Step 2 - Access environment variable
+        run: |
+          echo "Step 2: MY_VAR is $MY_VAR"  # This will print "HelloFromStep1"
