@@ -4,7 +4,7 @@ on:
   push:
 
 jobs:
-  build:
+  build_ke:
     runs-on: ubuntu-latest
     steps:
       - name: Simulate failure
