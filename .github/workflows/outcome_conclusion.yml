@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Simulate failure
-        id: build
+        id: build_ke
         run: exit 1
         continue-on-error: true  # This allows the job to continue even if this step fails
 
