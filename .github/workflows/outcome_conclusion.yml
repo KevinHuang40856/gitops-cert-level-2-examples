@@ -1,0 +1,33 @@
+name: Outcome vs Conclusion Demo
+
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Simulate failure
+        id: build
+        run: exit 1
+        continue-on-error: true  # This allows the job to continue even if this step fails
+
+      - name: Check outcome
+        if: steps.build.outcome == 'failure'
+        run: echo "The build step failed (raw outcome)."
+
+  test:
+    runs-on: ubuntu-latest
+    needs: build
+    if: always()  # This job runs regardless of build outcome
+    steps:
+      - name: Run tests
+        run: echo "Running tests..."
+
+  notify:
+    runs-on: ubuntu-latest
+    needs: [build, test]
+    if: needs.build.conclusion == 'failure' || needs.test.conclusion == 'failure'
+    steps:
+      - name: Notify failure
+        run: echo "One of the jobs failed (based on conclusion)."
