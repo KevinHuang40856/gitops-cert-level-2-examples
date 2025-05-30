@@ -8,11 +8,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Simulate failure
-        id: build_kevi
+        id: build_kev1
         run: exit 1
         continue-on-error: true  # This allows the job to continue even if this step fails
 
       - name: Check outcome
+        id: build_kev2
         if: steps.build.outcome == 'failure'
         run: echo "The build step failed (raw outcome)."
 
