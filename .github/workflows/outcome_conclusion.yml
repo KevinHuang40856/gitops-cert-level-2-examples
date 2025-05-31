@@ -11,11 +11,11 @@ jobs:
         timeout-minutes: 5
         id: build_kev1
         run: exit 1
-      #  continue-on-error: true  # This allows the job to continue even if this step fails
+        continue-on-error: true  # This allows the job to continue even if this step fails
 
       - name: Check outcome
         id: build_kev2
-        if: always() && steps.build_kev1.outcome == 'failure'
+        if: always() && steps.build_kev1.conclusion == 'failure'
         run: | 
           echo "step build_kev1 outcome ${{ steps.build_kev1.outcome }} "
           echo "step build_kev1 conclusion ${{ steps.build_kev1.conclusion }} "
