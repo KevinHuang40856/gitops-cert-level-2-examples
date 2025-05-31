@@ -28,7 +28,7 @@ jobs:
   notify:
     runs-on: ubuntu-latest
     needs: [build, test]
-    if: needs.build.steps.build_kev1.conclusion == 'failure' || needs.test.conclusion == 'failure'
+    if: needs.build.steps.build_kev2.conclusion == 'failure' || needs.test.conclusion == 'failure'
     steps:
       - name: Notify failure
         run: echo "One of the jobs failed (based on conclusion)."
