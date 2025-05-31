@@ -11,7 +11,7 @@ jobs:
         pet: [cat, dog]
         color: [pink, brown]
         include:
-          - color: white
+          - shape: round
             pet: dog
     steps:
       - run: echo "Hello ${{ matrix.color }} ${{ matrix.pet }}"
