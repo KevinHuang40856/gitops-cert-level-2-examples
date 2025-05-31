@@ -24,4 +24,4 @@ jobs:
          echo "action_state=yellow" >> "$GITHUB_ENV"
       - name: Use the value
         id: step_two
-        run: echo "${{ steps.step_one.outputs.action_state }}"
+        run: echo "print variable ${{ steps.step_one.outputs.action_state }}"
