@@ -14,9 +14,10 @@ jobs:
 
       - name: Check outcome
         id: build_kev2
-        if: steps.build_kev1.outcome == 'failure'
-        run: echo "The build step failed (raw outcome)."
-
+        if: steps.build_kev1.conclusion == 'failure'
+        run: | 
+          echo "step build_kev2 outcome ${{ steps.build_kev1.outcome }} "
+          echo "step build_kev2 conclusion ${{ steps.build_kev1.conclusion }} "
   test:
     runs-on: ubuntu-latest
     needs: build
