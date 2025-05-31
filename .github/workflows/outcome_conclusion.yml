@@ -15,7 +15,7 @@ jobs:
 
       - name: Check outcome
         id: build_kev2
-        if: always || && steps.build_kev1.conclusion == 'failure'
+        if: always() || && steps.build_kev1.conclusion == 'failure'
         run: | 
           echo "step build_kev1 outcome ${{ steps.build_kev1.outcome }} "
           echo "step build_kev1 conclusion ${{ steps.build_kev1.conclusion }} "
