@@ -13,6 +13,6 @@ jobs:
         include:
           - shape: round
             pet: cat
-          - shape: block
+          - behavi: block
     steps:
       - run: echo "Hello ${{ matrix.color }} ${{ matrix.pet }}"
