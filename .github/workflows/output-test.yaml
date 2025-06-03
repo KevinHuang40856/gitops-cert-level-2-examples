@@ -55,7 +55,7 @@ jobs:
       - run: |
           echo '${{ toJSON(needs.job1.outputs) }}'
           echo "${{ toJSON(needs.job1.outputs) }}"
-          echo '${{             needs.job1.outputs   }}
+          echo '${{ needs.job1.outputs   }}'
         
 
         
