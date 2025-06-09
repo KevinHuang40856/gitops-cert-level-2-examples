@@ -26,9 +26,14 @@ jobs:
       - name: Use error
         id: error-use
         run: echo "::error::some error happened"
-
+     
+      - name: Use exit
+        id: use-exit
+        run: exit 1
+        
       - name: Use output
         if: ${{ failure() }} || steps.error-use.outcome == "success"
         run: |
           echo "The branch is ${{ steps.set-output.outputs.branch }}"
-          echo "The previous step outcome is ${{ steps.error-use.outcome }}"
+          echo "The previous step outcome is ${{ steps.use-exit.outcome }}"
+          echo "The previous step conclusion is ${{ steps.use-exit.conclusion }}"
