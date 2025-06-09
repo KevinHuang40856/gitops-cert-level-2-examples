@@ -23,5 +23,5 @@ jobs:
         run: echo "status=feature-branch" >> $GITHUB_OUTPUT
         id: set-output
 
-      - name: Use output
+      - name: Use outputs
         run: echo "The status is ${{ steps.set-output.outputs.status }}"
