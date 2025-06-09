@@ -24,8 +24,9 @@ jobs:
         id: set-output
 
       - name: Use error
+        id: error-use
         run: echo "::error::some error happened"
 
       - name: Use output
-        if: ${{ failure() }}
+        if: ${{ failure() || error-use.conclusion == "success" }}
         run: echo "The status is ${{ steps.set-output.outputs.status }}"
