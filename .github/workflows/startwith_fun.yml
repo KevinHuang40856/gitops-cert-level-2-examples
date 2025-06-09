@@ -1,0 +1,27 @@
+name: Branch Filter with startsWith()
+
+on:
+  push:
+    branches:
+      - '**'
+
+jobs:
+  check-feature-branch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Print branch name
+        run: echo "Branch: ${{ github.ref }}"
+
+      - name: Run only on feature branches
+        if: startsWith(github.ref, 'refs/heads/feature/')
+        run: echo "This is a feature branch!"
+
+      - name: Set output using workflow command
+        run: echo "status=feature-branch" >> $GITHUB_OUTPUT
+        id: set-output
+
+      - name: Use output
+        run: echo "The status is ${{ steps.set-output.outputs.status }}"
