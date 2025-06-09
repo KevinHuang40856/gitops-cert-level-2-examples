@@ -20,7 +20,7 @@ jobs:
         run: echo "This is a feature branch!"
 
       - name: Set output using workflow command
-        run: echo "status=feature-branch" >> $GITHUB_OUTPUT
+        run: echo "branch=feature-branch" >> $GITHUB_OUTPUT
         id: set-output
 
       - name: Use error
@@ -29,4 +29,6 @@ jobs:
 
       - name: Use output
         if: ${{ failure() }} || steps.error-use.outcome == "success"
-        run: echo "The status is ${{ steps.set-output.outputs.status }}"
+        run: |
+          echo "The branch is ${{ steps.set-output.outputs.branch }}"
+          echo "The previous step outcome is ${{ steps.error-use.outcome }}"
