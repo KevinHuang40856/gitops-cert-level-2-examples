@@ -27,5 +27,5 @@ jobs:
         run: echo "::error::some error happened"
 
       - name: Use output
-        if: failed()
+        if: ${{ failure() }}
         run: echo "The status is ${{ steps.set-output.outputs.status }}"
