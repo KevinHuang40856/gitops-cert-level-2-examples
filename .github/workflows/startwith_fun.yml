@@ -1,4 +1,4 @@
-name: Branch Filter with startsWith()
+name: Branch Filter with startsWith_freature()
 
 on:
   push:
