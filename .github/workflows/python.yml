@@ -1,0 +1,15 @@
+name: Python Shell Example
+
+on: [push]
+
+jobs:
+  run-python-shell:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Run inline Python code
+        run: |
+          print("Hello from GitHub Actions using shell: python!")
+          import platform
+          print("Python version:", platform.python_version())
+        shell: python
