@@ -21,6 +21,12 @@ jobs:
           - fruit: banana
           - fruit: banana
             animal: cat
+        exclude: 
+           - fruit: apple
+             animal: cat 
+           - fruit: banana
+             animal: cat
+             
 
     steps:
       - name: Print matrix values
