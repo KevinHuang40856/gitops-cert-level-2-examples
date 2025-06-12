@@ -22,8 +22,8 @@ jobs:
           - fruit: banana
             animal: cat
         exclude: 
-           - fruit: apple
-             animal: cat 
+           # - fruit: apple
+           #   animal: cat 
            - fruit: banana
              animal: cat
              
