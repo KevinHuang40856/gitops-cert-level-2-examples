@@ -5,11 +5,25 @@ on:
 
 jobs:
   info:
-    runs-on: ubuntu-latest
-    steps:
+   runs-on: ubuntu-latest
+   services:
+     nginx:
+      image: nginx
+    # Map port 8080 on the Docker host to port 80 on the nginx container
+      ports:
+      - 8080:80
+     redis:
+       image: redis
+    # Map random free TCP port on Docker host to port 6379 on redis container
+       ports:
+        - 6379/tcp
+   steps:
     - name: NAME OF THE WORKFLOW
       run: echo ${{ github.workflow }} 
     - name: The link to the profile of the owner
       run: echo ${{ github.event.repository.owner.html_url }} 
     - if: ${{ github.event.repository.private == 'false' }}
       run:  echo "::warning::This repository is public!"
+    - run: |
+        echo "Redis available on 127.0.0.1:${{ job.services.redis.ports['6379'] }}"
+        echo "Nginx available on 127.0.0.1:${{ job.services.nginx.ports['80'] }}"
