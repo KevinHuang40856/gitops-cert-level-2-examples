@@ -19,4 +19,4 @@ jobs:
       - name: Check for dockerenv file
         run: (ls /.dockerenv && echo Found dockerenv) || (echo No dockerenv)
       - run: echo "myenv=env.NODE_ENV">> "$GITHUB_OUTPUT"
-      - run: echo $myenv
+      - run: echo $NODE_ENV
