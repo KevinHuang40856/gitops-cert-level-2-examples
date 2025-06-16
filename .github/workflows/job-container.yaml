@@ -7,7 +7,7 @@ jobs:
   container-test-job:
     runs-on: ubuntu-latest
     container:
-      image: node:18
+      image: ubuntu
       env:
         NODE_ENV: development
       ports:
@@ -19,5 +19,5 @@ jobs:
       - name: Check for dockerenv file
         run: (ls /.dockerenv && echo Found dockerenv) || (echo No dockerenv)
       - run: echo "myenv=env.NODE_ENV">> "$GITHUB_OUTPUT"
-      - run: echo "what is my $env"
+      - run: echo "what is my $hostname"
       
