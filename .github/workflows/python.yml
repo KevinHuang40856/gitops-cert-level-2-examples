@@ -1,6 +1,7 @@
 name: Python Shell Example
 
-on: [push]
+on: 
+  workflow_dispatch :
 
 jobs:
   run-python-shell:
