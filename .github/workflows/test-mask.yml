@@ -16,11 +16,11 @@ jobs:
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
           GITHUB_TEST: ${{ github.action_path}}
-        run: 
+        run: |
            # echo "$GITHUB_CONTEXT"
-           # echo "${{ github.action_path }}"
-           # echo "GITHUB.ACTION_PATH"
-           # echo $GITHUB_TEST
+           echo "${{ github.action_path }}"
+           echo "GITHUB.ACTION_PATH"
+           echo $GITHUB_TEST
            cd ${{ github.action_path }}
            pwd
-           echo "${{ github.action_path }}"
+ 
