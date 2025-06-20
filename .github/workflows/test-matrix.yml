@@ -1,10 +1,8 @@
 name: Matrix Strategy Test
 
 on:
-  push:
-    branches: [main]
-  pull_request:
-
+  workflow_dispatch:
+  
 jobs:
   test-matrix:
     runs-on: ubuntu-latest
