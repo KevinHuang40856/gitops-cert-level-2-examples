@@ -18,9 +18,9 @@ jobs:
           GITHUB_TEST: ${{ github.action_path}}
         run: |
            # echo "$GITHUB_CONTEXT"
-           echo "${{ github.action_path }}"
-           echo "GITHUB.ACTION_PATH"
-           echo $GITHUB_TEST
-           cd ${{ github.action_path }}
-           pwd
+            echo ${{ github.action_path }}
+           # echo "GITHUB.ACTION_PATH"
+           # echo $GITHUB_TEST
+           # cd ${{ github.action_path }}
+           # pwd
  
