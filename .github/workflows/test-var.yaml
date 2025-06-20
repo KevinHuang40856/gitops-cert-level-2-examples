@@ -8,7 +8,9 @@ defaults:
     shell: bash
 
 jobs:
+
   job1: 
+    environment: prod
     runs-on: ubuntu-latest
     env:
       VAR1: "hello"
