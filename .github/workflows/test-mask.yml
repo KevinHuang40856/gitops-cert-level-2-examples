@@ -22,7 +22,8 @@ jobs:
            #  echo "${{ github.action_path }}"
            # # echo "GITHUB.ACTION_PATH"
            # # echo $GITHUB_TEST
-           ls ${GITHUB_ACTION_PATH}/workflows/
+           ls ${GITHUB_ACTION_PATH}/pictures
+           
            echo " pwd "
            pwd
            echo " ls"
