@@ -1,8 +1,7 @@
 name: Comment when opened using github cli
 on:
   pull_request:
-    types:
-      - opened
+    
 jobs:
   comment:
     runs-on: ubuntu-latest
