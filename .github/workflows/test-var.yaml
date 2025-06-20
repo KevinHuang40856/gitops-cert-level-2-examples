@@ -2,7 +2,11 @@ name: variables - test
 
 on:
   workflow_dispatch:
-  
+
+defaults: 
+  run: 
+    shell: bash
+
 jobs:
   job1: 
     runs-on: ubuntu-latest
@@ -11,7 +15,8 @@ jobs:
     
     steps:
     - run: echo "VAR2=$VAR1" >> $GITHUB_ENV 
-    - run: echo $VAR2
+    - run: echo "VAR3=KEVIN" >> "$GITHUB_ENV"
+    - run: echo $VAR2 $VAR3
     - name: Show contents of $GITHUB_ENV
       run: cat $GITHUB_ENV
     - name: Show contents of $GITHUB_ENV using env 
