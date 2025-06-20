@@ -23,6 +23,7 @@ jobs:
            # # echo "GITHUB.ACTION_PATH"
            # # echo $GITHUB_TEST
            ls ${GITHUB_ACTION_PATH}
+           echo " pwd "
            pwd
+           echo " ls"
            ls
- 
