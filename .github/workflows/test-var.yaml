@@ -10,7 +10,7 @@ defaults:
 jobs:
 
   job1: 
-    environment: prod
+    # environment: prod
     runs-on: ubuntu-latest
     env:
       VAR1: "hello"
