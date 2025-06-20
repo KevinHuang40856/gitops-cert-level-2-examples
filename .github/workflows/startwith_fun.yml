@@ -3,7 +3,7 @@ name: Branch Filter with startsWith()
 on:
   push:
     branches:
-      - '**'
+      - 'feature/**'
 
 jobs:
   check-feature-branch:
