@@ -22,7 +22,7 @@ jobs:
            #  echo "${{ github.action_path }}"
            # # echo "GITHUB.ACTION_PATH"
            # # echo $GITHUB_TEST
-           cd ${{ GITHUB_ACTION_PATH }}
+           cd ${GITHUB_ACTION_PATH}
            pwd
            ls
  
