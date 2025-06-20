@@ -15,4 +15,8 @@ jobs:
       - name: github context
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
-        run: echo "$GITHUB_CONTEXT"
+        run: 
+           echo "$GITHUB_CONTEXT"
+           echo "$github.action_path"
+           echo "$GITHUB.ACTION_PATH"
+           
