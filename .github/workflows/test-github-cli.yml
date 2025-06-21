@@ -20,5 +20,7 @@ jobs:
       - name: call local composite action
         id: callcom
         uses: ./actions
-      - name: get outputs
-        run: echo ${{ steps.callcom.outputs.version}}
+      - run: echo random-number "$RANDOM_NUMBER"
+        shell: bash
+        env:
+          RANDOM_NUMBER: ${{ steps.callcom.outputs.version }}
