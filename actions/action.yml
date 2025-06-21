@@ -22,7 +22,7 @@ runs:
     - run: |
         echo $GITHUB_ACTION_PATH
         echo ${{ github.action_path }}
-        github.action_path/scripts/setup.sh
+        $GITHUB_ACTION_PATH/scripts/setup.sh
       shell: bash
     - id: version
       shell: bash
