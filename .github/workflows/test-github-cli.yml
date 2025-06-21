@@ -20,6 +20,6 @@ jobs:
           echo "$GITHUB_HEAD_REF"
       - name: call local composite action
         id: callcom
-        uses: /actions/setup
+        uses: ./actions
       - name: get outputs
         run: echo ${{ steps.callcom.outputs.version}}
