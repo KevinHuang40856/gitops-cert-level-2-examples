@@ -20,9 +20,8 @@ runs:
   using: "composite"
   steps:
     - run: |
-        echo $GITHUB_ACTION_PATH
         echo ${{ github.action_path }}
-        $GITHUB_ACTION_PATH/scripts/setup.sh
+        ${{ github.action_path }}/scripts/setup.sh
       shell: bash
     - id: version
       shell: bash
