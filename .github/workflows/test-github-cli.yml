@@ -27,7 +27,7 @@ jobs:
       - run: echo "${{ steps.callcom.outputs.version }}"
         shell: bash
       - run: |
-         echo "REF $GITHUB_REF
+         echo "REF $GITHUB_REF"
          echo "WORKSPACE $GITHUB_WORKSPACE"
          echo "ACTOR $GITHUB_ACTOR"
         shell: bash
