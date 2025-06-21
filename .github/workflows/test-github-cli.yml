@@ -26,3 +26,8 @@ jobs:
           RANDOM_NUMBER: ${{ steps.callcom.outputs.version }}
       - run: echo "${{ steps.callcom.outputs.version }}"
         shell: bash
+      - run: |
+         echo "REF $GITHUB_REF
+         echo "WORKSPACE $GITHUB_WORKSPACE"
+         echo "ACTOR $GITHUB_ACTOR"
+        shell: bash
