@@ -24,3 +24,5 @@ jobs:
         shell: bash
         env:
           RANDOM_NUMBER: ${{ steps.callcom.outputs.version }}
+      - run: echo "${{ steps.callcom.outputs.version }}"
+        shell: bash
