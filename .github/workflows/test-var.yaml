@@ -29,6 +29,6 @@ jobs:
       # continue-on-error: true
     - run: exit 0
       name: exit2
-      if: ${{ alwayse() }} 
+      if: ${{ always() }} 
       
 
