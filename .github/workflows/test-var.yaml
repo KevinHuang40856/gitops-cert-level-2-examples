@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       VAR1: "hello"
-    
+    continue-on-error: true
     steps:
     - run: echo "VAR2=$VAR1" >> $GITHUB_ENV 
     - run: echo "VAR3=KEVIN" >> "$GITHUB_ENV"
@@ -26,7 +26,7 @@ jobs:
     - run: echo "### Hello world! :rocket:" >> $GITHUB_STEP_SUMMARY
     - run: exit 1
       name: exit
-      continue-on-error: true
+      # continue-on-error: true
     - run: exit 0
       name: exit2
       
