@@ -28,4 +28,5 @@ jobs:
       name: exit
     - run: exit 0
       name: exit2
+      continue-on-error: true
 
