@@ -24,5 +24,7 @@ jobs:
     - name: Show contents of $GITHUB_ENV using env 
       run: env 
     - run: echo "### Hello world! :rocket:" >> $GITHUB_STEP_SUMMARY
+    - run: exit 1
+      name: exit
        
 
