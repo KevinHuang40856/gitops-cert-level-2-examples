@@ -18,6 +18,7 @@ jobs:
     steps:
     - run: echo "VAR2=$VAR1" >> $GITHUB_ENV 
     - run: echo "VAR3=KEVIN" >> "$GITHUB_ENV"
+    - run: echo ${{ env.VAR1}}
     - run: echo $VAR2 $VAR3
     - name: Show contents of $GITHUB_ENV
       run: cat $GITHUB_ENV
