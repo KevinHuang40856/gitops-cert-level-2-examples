@@ -3,6 +3,7 @@ jobs:
   generate-a-secret-output:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - id: sets-a-secret
         name: Generate, mask, and output a secret
         run: |
@@ -12,3 +13,19 @@ jobs:
       - name: Use that secret output (protected by a mask)
         run: |
           echo "the secret number is ${{ steps.sets-a-secret.outputs.secret-number }}"
+      - name: github context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+          GITHUB_TEST: ${{ github.action_path}}
+        run: |
+           # # echo "$GITHUB_CONTEXT"
+           #  echo "${{ github.action_path }}"
+           # # echo "GITHUB.ACTION_PATH"
+           # # echo $GITHUB_TEST
+           echo 'path is  ${{ github.action_path }}'
+           ls  ${{ github.action_path }} -alh
+           
+           echo " pwd "
+           pwd
+           echo " ls"
+           ls
